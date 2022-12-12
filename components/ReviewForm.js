@@ -11,11 +11,11 @@ app.component('review-form', {
 
         <label>Rating:</label>
         <select id="rating" v-model.number="rating"> 
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
           <option>5</option>
+          <option>4</option>
+          <option>3</option>
+          <option>2</option>
+          <option>1</option>
         </select>
         <input class="button" type="submit" value="Submit">
      </form>`,
@@ -33,8 +33,14 @@ app.component('review-form', {
         return
       }
 
+      const myName = this.name;
+      const words = myName.split(" ");
+      const finalName = words.map((word) => { 
+        return word[0].toUpperCase() + word.substring(1); 
+      }).join(" ");
+
       let productReview = {
-        name: this.name,
+        name: finalName,
         review: this.review,
         rating: this.rating
       }

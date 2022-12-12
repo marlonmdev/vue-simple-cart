@@ -159,8 +159,16 @@ p {
 	width: 50%;
 }
 
-.text-center{
+.text-center {
 	text-align: center;
+}
+
+.text-danger {
+ color: red;
+}
+
+.text-warning {
+ color: orange;
 }
 
 .review-div {
