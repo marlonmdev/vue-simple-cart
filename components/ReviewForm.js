@@ -33,14 +33,8 @@ app.component('review-form', {
         return
       }
 
-      const myName = this.name;
-      const words = myName.split(" ");
-      const finalName = words.map((word) => { 
-        return word[0].toUpperCase() + word.substring(1); 
-      }).join(" ");
-
       let productReview = {
-        name: finalName,
+        name: this.name,
         review: this.review,
         rating: this.rating
       }
