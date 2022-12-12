@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Vue Mastery</title>
+		<title>VueJS</title>
 		<!-- Import Styles -->
 		<link rel="stylesheet" href="./assets/styles.css" />
 		<!-- Import Bootstrap Icons -->
@@ -16,57 +16,23 @@
 	<body>
 		<div id="app">
 			<div class="nav-bar"></div>
+
 			<div class="cart">
-				<i class="bi bi-cart-fill"></i> Your Cart ({{cart}}) |
-				<button v-on:click="clearCart"><i class="bi bi-trash-fill"></i></button>
+				<i class="bi bi-cart-fill"></i> Your Cart ({{ cart.length }}) |
+				<button @click="clearCart"><i class="bi bi-trash-fill"></i></button>
 			</div>
 
-			<div class="product-display">
-				<div class="product-container">
-					<div class="product-image">
-						<img v-bind:src="image" alt="" :class="[ !inStock ? 'out-of-stock-img' : '']" />
-					</div>
-					<div class="product-info">
-						<h1>
-							{{ title }}</span>
-						</h1>
-
-						<h2>Price: <span :class="{ oldPrice: onSale }">${{ price }} </span> <span v-show="onSale" class="on-sale"> {{ salePrice }} <i class="bi bi-lightning-fill"></i>On Sale</span></h2>
-
-						<div v-for="size in sizes" class="available-sizes">
-							{{ size }} &nbsp;&nbsp;
-						</div>
-
-            <p v-if="inStock"><i class="bi bi-check"></i> In Stock</p>
-						<p v-else><i class="bi bi-x"></i> Out of Stock</p>
-
-						<!-- <p v-if="inventory > 10">In Stock</p>
-						<p v-else-if="inventory <= 10 && inventory > 0">Almost Sold Out!</p>
-						<p v-else>Out of Stock</p> -->
-
-						<ul>
-							<li v-for="detail in details">{{ detail }} &nbsp;&nbsp;</li>
-						</ul>
-
-						<div
-							v-for="(variant, index) in variants"
-							v-bind:key="variant.id"
-							@mouseover="updateVariant(index)"
-							v-bind:class="variant.color"
-							class="color-circle"
-							v-bind:style="{ backgroundColor: variant.color }"
-						></div>
-
-						<p class="description">{{ description }}</p>
-
-						<button v-on:click="addToCart" :disabled="!inStock" :class="{ disabledButton: !inStock }" class="button">Add to Cart</button>
-					</div>
-				</div>
-			</div>
+			<product-display :premium="premium" @add-to-cart="updateCart"></product-display>
 		</div>
 
 		<!-- Import App -->
 		<script src="./main.js"></script>
+
+		<!-- Import Components -->
+		<script src="./components/ProductDisplay.js"></script>
+		<script src="./components/ReviewForm.js"></script>
+		<script src="./components/ReviewList.js"></script>
+		<!-- Mount App -->
 		<script>
 			const mountedApp = app.mount("#app");
 		</script>

@@ -159,6 +159,12 @@ p {
 	width: 50%;
 }
 
+.review-div {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+}
+
 .review-form {
 	display: flex;
 	flex-direction: column;
@@ -179,7 +185,6 @@ p {
 	-webkit-box-shadow: 0px 2px 20px -12px rgba(0, 0, 0, 0.57);
 	-moz-box-shadow: 0px 2px 20px -12px rgba(0, 0, 0, 0.57);
 	box-shadow: 2px 20px -12px rgba(0, 0, 0, 0.57);
-	margin-left: 40px;
 	border: 2px solid #d8d8d8;
 }
 
@@ -192,9 +197,13 @@ p {
 	margin: 30px auto;
 }
 
+input{
+		font-size: 16px;
+}
+
 select {
 	height: 40px;
-	font-size: 20px;
+	font-size: 16px;
 	background-color: white;
 	cursor: pointer;
 }
@@ -203,12 +212,30 @@ textarea {
 	width: 95%;
 	height: 70px;
 	padding: 10px;
-	font-size: 20px;
+	font-size: 16px;
 	margin-bottom: 20px;
 }
 
 ul {
 	list-style-type: none;
+}
+
+.rating-container {
+	display: inline-block;
+}
+
+.rating-container .bi {
+	margin-right: 20px;
+}
+
+.checked{
+	color: orange;
+}
+
+.bi-star-fill{
+	font-size: 2em;
+	margin-right:8px;
+	cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
