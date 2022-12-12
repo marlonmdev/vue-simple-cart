@@ -159,6 +159,10 @@ p {
 	width: 50%;
 }
 
+.text-center{
+	text-align: center;
+}
+
 .review-div {
 	display: flex;
 	justify-content: center;
@@ -218,24 +222,6 @@ textarea {
 
 ul {
 	list-style-type: none;
-}
-
-.rating-container {
-	display: inline-block;
-}
-
-.rating-container .bi {
-	margin-right: 20px;
-}
-
-.checked{
-	color: orange;
-}
-
-.bi-star-fill{
-	font-size: 2em;
-	margin-right:8px;
-	cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
